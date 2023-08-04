@@ -1,7 +1,7 @@
 name: Pacman
 
 on: 
- push: 
+ workflow_dispatch: 
   branches: 
    -main 
 
@@ -13,10 +13,16 @@ jobs:
     - name : connecting to ssh vm
       uses: appleboy/ssh-action@v1.0.0
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        
+        host: 47.254.215.8
+        username: syakir
+        password: Syakir1234
+        port: 22
+        script: 
+         git clone https://github.com/mo-ake/pacman-deployment-automation
+         cd pacman-deployment-automation
+         npm install
+         npm run start
+         
+         
    
         
