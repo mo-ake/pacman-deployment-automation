@@ -20,8 +20,8 @@ jobs:
         script: |
          git clone https://github.com/mo-ake/pacman-deployment-automation
          cd pacman-deployment-automation
-         npm install
-         npm run start
+         sudo npm install
+         sudo npm run start
          
          
    
