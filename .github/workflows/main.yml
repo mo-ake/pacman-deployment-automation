@@ -17,7 +17,7 @@ jobs:
         username: syakir
         password: Syakir1234
         port: 22
-        script: 
+        script: |
          git clone https://github.com/mo-ake/pacman-deployment-automation
          cd pacman-deployment-automation
          npm install
