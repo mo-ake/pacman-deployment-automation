@@ -19,4 +19,6 @@ jobs:
         password: ${{ secrets.password }}
         port: ${{ secrets.port }}
         script: |
-         git pull https://github.com/mo-ake/pacman-deployment-automation
+         cd pacman-deployment-automation
+         git fetch origin main
+         git pull
