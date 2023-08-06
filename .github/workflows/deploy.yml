@@ -13,10 +13,10 @@ jobs:
     - name : connecting to ssh vm
       uses: appleboy/ssh-action@v1.0.0
       with:
-        host: 47.254.215.8
-        username: syakir
-        password: Syakir1234
-        port: 22
+        host: ${{ secrets.host }}
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
+        port: ${{ secrets.port }}
         script: |
          git clone https://github.com/mo-ake/pacman-deployment-automation
          cd pacman-deployment-automation
