@@ -1,0 +1,25 @@
+name: pull
+
+on: 
+  push:
+    branches:
+    - main
+    - release/*
+
+jobs: 
+  deploy: 
+   name: deploy
+   runs-on : ubuntu-latest
+   steps: 
+    - name : connecting to ssh vm
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.host }}
+        username: ${{ secrets.username }}
+        password: ${{ secrets.password }}
+        port: ${{ secrets.port }}
+        script: |
+         git pull https://github.com/mo-ake/pacman-deployment-automation
+         cd pacman-deployment-automation
+         sudo npm install
+         sudo npm run start
