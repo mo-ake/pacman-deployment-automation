@@ -20,6 +20,3 @@ jobs:
         port: ${{ secrets.port }}
         script: |
          git pull https://github.com/mo-ake/pacman-deployment-automation
-         cd pacman-deployment-automation
-         sudo npm install
-         sudo npm run start
